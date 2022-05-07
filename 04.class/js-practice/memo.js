@@ -36,3 +36,9 @@ const addNewmemo = () => {
     fs.writeFileSync(`./data/${fileName}.json`, jsonText)
   })
 }
+
+const showFirstlines = () => {
+  titles.forEach((element) => {
+    console.log(element)
+  })
+}
