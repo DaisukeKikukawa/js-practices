@@ -14,3 +14,25 @@ const createFirstlines = () => {
 }
 
 const titles = createFirstlines()
+
+const addNewmemo = () => {
+  process.stdin.resume()
+  process.stdin.setEncoding('utf8')
+  const uuid = require('uuid')
+  const fileName = uuid.v4()
+  const lines = []
+
+  const reader = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  })
+
+  reader.on('line', (line) => {
+    lines.push(line)
+  })
+  reader.on('close', () => {
+    const memo = lines.join('\n')
+    const jsonText = JSON.stringify({ Memo: memo })
+    fs.writeFileSync(`./data/${fileName}.json`, jsonText)
+  })
+}
