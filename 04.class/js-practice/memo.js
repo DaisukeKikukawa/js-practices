@@ -79,3 +79,26 @@ class Files {
     return selectedMemo
   }
 }
+
+const showMemo = () => {
+  const files = new Files()
+  files
+    .selectFiles(files.oneLines, 'Choose a note you want to see:')
+    .then((data) => {
+      const jsonObject2 = JSON.parse(fs.readFileSync(data, 'utf8'))
+      console.log(jsonObject2.Memo)
+    })
+}
+
+const destroyMemo = () => {
+  const files = new Files()
+  files
+    .selectFiles(files.oneLines, 'Choose a note you want to delete:')
+    .then((data) => {
+      return fs.unlink(data, function (err) {
+        if (err) {
+          throw err
+        }
+      })
+    })
+}
