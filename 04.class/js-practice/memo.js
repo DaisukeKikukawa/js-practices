@@ -61,7 +61,7 @@ class Files {
     this.oneLines = oneLines()
   }
 
-  async selectFiles(oneLinesfiles, message) {
+  async selectFiles (oneLinesfiles, message) {
     let result = 0
     const oneLinesFilesCopy = oneLinesfiles.slice()
 
@@ -101,4 +101,14 @@ const destroyMemo = () => {
         }
       })
     })
+}
+
+if (option === '-l') {
+  showFirstlines()
+} else if (option === '-r') {
+  showMemo()
+} else if (option === '-d') {
+  destroyMemo()
+} else {
+  addNewmemo()
 }
