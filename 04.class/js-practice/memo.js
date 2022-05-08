@@ -83,8 +83,8 @@ class Files {
   }
 }
 
+const files = new Files()
 const showMemo = () => {
-  const files = new Files()
   files
     .selectFiles(files.oneLines, 'Choose a note you want to see:')
     .then((data) => {
@@ -94,7 +94,6 @@ const showMemo = () => {
 }
 
 const destroyMemo = () => {
-  const files = new Files()
   files
     .selectFiles(files.oneLines, 'Choose a note you want to delete:')
     .then((data) => {
