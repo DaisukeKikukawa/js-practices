@@ -1,0 +1,24 @@
+{
+  "name": "a",
+  "scripts": {
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "fix": "eslint --fix --ext .js --ignore-path .gitignore ."
+  },
+  "devDependencies": {
+    "eslint": "^8.6.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0"
+  },
+  "version": "1.0.0",
+  "main": "calendar.js",
+  "dependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "bin": {
+    "cli": "bin/cli.js"
+  }
+}
