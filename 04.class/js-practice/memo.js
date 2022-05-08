@@ -1,4 +1,7 @@
 const fs = require('fs')
+if (!fs.existsSync('data')) {
+  fs.mkdirSync('data')
+}
 const option = process.argv[2]
 
 const createFirstlines = () => {
