@@ -1,4 +1,8 @@
 const fs = require('fs')
+const uuid = require('uuid')
+const Enquirer = require('enquirer')
+const Readline = require('readline')
+
 if (!fs.existsSync('data')) {
   fs.mkdirSync('data')
 }
@@ -21,11 +25,10 @@ const titles = createFirstlines()
 const addNewmemo = () => {
   process.stdin.resume()
   process.stdin.setEncoding('utf8')
-  const uuid = require('uuid')
   const fileName = uuid.v4()
   const lines = []
 
-  const reader = require('readline').createInterface({
+  const reader = Readline.createInterface({
     input: process.stdin,
     output: process.stdout
   })
@@ -68,7 +71,6 @@ class Files {
     let result = 0
     const oneLinesFilesCopy = oneLinesfiles.slice()
 
-    const Enquirer = require('enquirer')
     const question = {
       type: 'select',
       name: 'line',
