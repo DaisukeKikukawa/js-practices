@@ -86,25 +86,24 @@ class Files {
 }
 
 const files = new Files()
-const showMemo = () => {
-  files
-    .selectFiles(files.oneLines, 'Choose a note you want to see:')
-    .then((data) => {
-      const jsonObject2 = JSON.parse(fs.readFileSync(data, 'utf8'))
-      console.log(jsonObject2.Memo)
-    })
+async function showMemo () {
+  const data = await files.selectFiles(
+    files.oneLines,
+    'Choose a note you want to see:'
+  )
+  console.log(JSON.parse(fs.readFileSync(data, 'utf8')).Memo)
 }
 
-const destroyMemo = () => {
-  files
-    .selectFiles(files.oneLines, 'Choose a note you want to delete:')
-    .then((data) => {
-      return fs.unlink(data, function (err) {
-        if (err) {
-          throw err
-        }
-      })
-    })
+async function destroyMemo () {
+  const data = await files.selectFiles(
+    files.oneLines,
+    'Choose a note you want to delete:'
+  )
+  return fs.unlink(data, function (err) {
+    if (err) {
+      throw err
+    }
+  })
 }
 
 if (option === '-l') {
