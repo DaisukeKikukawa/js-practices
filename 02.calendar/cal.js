@@ -17,28 +17,28 @@ switch (startDayOfWeek) {
     indentByStartDay = "";
     break;
   case 1:
-    indentByStartDay = "    ";
+    indentByStartDay = "   ";
     break;
   case 2:
-    indentByStartDay = "        ";
+    indentByStartDay = "      ";
     break;
   case 3:
-    indentByStartDay = "            ";
+    indentByStartDay = "         ";
     break;
   case 4:
-    indentByStartDay = "                ";
+    indentByStartDay = "            ";
     break;
   case 5:
-    indentByStartDay = "                    ";
+    indentByStartDay = "               ";
     break;
   case 6:
-    indentByStartDay = "                        ";
+    indentByStartDay = "                  ";
     break;
 }
 
-process.stdout.write("        ");
+process.stdout.write("      ");
 console.log(`${month}月 ${year}`);
-console.log("日  月  火  水  木  金  土");
+console.log("日 月 火 水 木 金 土");
 
 for (let i = 1; i <= lastDateOfMonth; i++) {
   if (isFirstLineOfMonth) {
@@ -50,12 +50,10 @@ for (let i = 1; i <= lastDateOfMonth; i++) {
   } else {
     process.stdout.write(String(i));
   }
-  process.stdout.write("  ");
+  process.stdout.write(" ");
   if (dayOfWeekCounter === 6) {
     console.log("");
     dayOfWeekCounter = -1;
   }
   dayOfWeekCounter++;
 }
-
-console.log();
