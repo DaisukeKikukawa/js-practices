@@ -36,8 +36,8 @@ switch (startDayOfWeek) {
     break;
 }
 
-process.stdout.write("       ");
-console.log(`${year}年${month}月`);
+process.stdout.write("        ");
+console.log(`${month}月 ${year}`);
 console.log("日  月  火  水  木  金  土");
 
 for (let i = 1; i <= lastDateOfMonth; i++) {
@@ -57,3 +57,5 @@ for (let i = 1; i <= lastDateOfMonth; i++) {
   }
   dayOfWeekCounter++;
 }
+
+console.log();
