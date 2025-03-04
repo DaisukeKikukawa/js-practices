@@ -25,6 +25,7 @@ for (let i = 1; i <= lastDateOfMonth; i++) {
     process.stdout.write(String(i));
   }
   if (i.getDay() !== 6 && i !== lastDate.getDate()) {
+    console.log();
   }
   dayOfWeekCounter++;
 }
