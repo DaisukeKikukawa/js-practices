@@ -4,12 +4,8 @@ import minimist from "minimist";
 
 const argv = minimist(process.argv.slice(2));
 const now = new Date();
-const year = argv.y ? argv.y : now.getFullYear();
-const month = argv.m ? argv.m : now.getMonth() + 1;
-const startDayOfWeek = new Date(year, month - 1, 1).getDay();
-const lastDateOfMonth = new Date(year, month, 0).getDate();
-let isFirstLineOfMonth = true;
-let dayOfWeekCounter = startDayOfWeek;
+const year = argv.y !== undefined ? argv.y : now.getFullYear();
+const month = argv.m !== undefined ? argv.m : now.getMonth() + 1;
 let indentByStartDay = "";
 
 switch (startDayOfWeek) {
