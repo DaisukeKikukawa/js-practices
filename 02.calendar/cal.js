@@ -20,7 +20,7 @@ for (let i = 1; i <= lastDateOfMonth; i++) {
     isFirstLineOfMonth = false;
   }
   if (i < 10) {
-    process.stdout.write(" " + String(i));
+    process.stdout.write(` ${String(i.getDate())}`);
   } else {
     process.stdout.write(String(i));
   }
