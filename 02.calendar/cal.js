@@ -24,10 +24,7 @@ for (let i = 1; i <= lastDateOfMonth; i++) {
   } else {
     process.stdout.write(String(i));
   }
-  process.stdout.write(" ");
-  if (dayOfWeekCounter === 6) {
-    console.log("");
-    dayOfWeekCounter = -1;
+  if (i.getDay() !== 6 && i !== lastDate.getDate()) {
   }
   dayOfWeekCounter++;
 }
