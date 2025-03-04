@@ -8,29 +8,7 @@ const year = argv.y !== undefined ? argv.y : now.getFullYear();
 const month = argv.m !== undefined ? argv.m : now.getMonth() + 1;
 let indentByStartDay = "";
 
-switch (startDayOfWeek) {
-  case 0:
-    indentByStartDay = "";
-    break;
-  case 1:
-    indentByStartDay = "   ";
-    break;
-  case 2:
-    indentByStartDay = "      ";
-    break;
-  case 3:
-    indentByStartDay = "         ";
-    break;
-  case 4:
-    indentByStartDay = "            ";
-    break;
-  case 5:
-    indentByStartDay = "               ";
-    break;
-  case 6:
-    indentByStartDay = "                  ";
-    break;
-}
+indentByStartDay = " ".repeat(startDate.getDay() * 3);
 
 process.stdout.write("      ");
 console.log(`${month}月 ${year}`);
