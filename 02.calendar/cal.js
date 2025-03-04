@@ -6,6 +6,8 @@ const argv = minimist(process.argv.slice(2));
 const now = new Date();
 const year = argv.y !== undefined ? argv.y : now.getFullYear();
 const month = argv.m !== undefined ? argv.m : now.getMonth() + 1;
+const startDate = new Date(year, month - 1, 1);
+const lastDate = new Date(year, month, 0);
 let indentByStartDay = "";
 
 indentByStartDay = " ".repeat(startDate.getDay() * 3);
