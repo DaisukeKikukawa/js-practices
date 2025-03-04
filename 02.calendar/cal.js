@@ -15,7 +15,7 @@ console.log(`${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 
 for (let i = 1; i <= lastDateOfMonth; i++) {
-  if (isFirstLineOfMonth) {
+  if (i.getDate() === 1) {
     process.stdout.write(indentByStartDay);
     isFirstLineOfMonth = false;
   }
