@@ -15,16 +15,16 @@ console.log(`${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 process.stdout.write(indentByStartDay);
 
-for (let i = startDate; i <= lastDate; i.setDate(i.getDate() + 1)) {
-  if (i.getDate() < 10) {
-    process.stdout.write(` ${String(i.getDate())}`);
+for (let date = new Date(startDate.getTime()); date <= lastDate; date.setDate(date.getDate() + 1)) {
+  if (date.getDate() < 10) {
+    process.stdout.write(` ${String(date.getDate())}`);
   } else {
-    process.stdout.write(String(i.getDate()));
+    process.stdout.write(String(date.getDate()));
   }
-  if (i.getDay() !== 6 && i !== lastDate.getDate()) {
+  if (date.getDay() !== 6 && date !== lastDate.getDate()) {
     process.stdout.write(" ");
   }
-  if (i.getDay() === 6) {
+  if (date.getDay() === 6) {
     console.log();
   }
 }
