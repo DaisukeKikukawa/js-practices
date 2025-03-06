@@ -13,11 +13,9 @@ let indentByStartDay = " ".repeat(startDate.getDay() * 3);
 process.stdout.write("      ");
 console.log(`${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
+process.stdout.write(indentByStartDay);
 
 for (let i = startDate; i <= lastDate; i.setDate(i.getDate() + 1)) {
-  if (i.getDate() === 1) {
-    process.stdout.write(indentByStartDay);
-  }
   if (i.getDate() < 10) {
     process.stdout.write(` ${String(i.getDate())}`);
   } else {
