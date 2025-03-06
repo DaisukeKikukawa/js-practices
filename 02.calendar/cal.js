@@ -24,7 +24,7 @@ for (let date = new Date(startDate.getTime()); date <= lastDate; date.setDate(da
   if (date.getDay() !== 6 && date.getDate() !== lastDate.getDate()) {
     process.stdout.write(" ");
   }
-  if (date.getDay() === 6) {
+  if (date.getDay() === 6 || date.getDate() === lastDate.getDate()) {
     console.log();
   }
 }
