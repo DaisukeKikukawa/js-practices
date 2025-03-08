@@ -15,7 +15,11 @@ console.log(`${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 process.stdout.write(indentByStartDay);
 
-for (let date = new Date(startDate.getTime()); date <= lastDate; date.setDate(date.getDate() + 1)) {
+for (
+  let date = new Date(startDate.getTime());
+  date <= lastDate;
+  date.setDate(date.getDate() + 1)
+) {
   if (date.getDate() < 10) {
     process.stdout.write(` ${String(date.getDate())}`);
   } else {
