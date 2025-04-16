@@ -20,14 +20,9 @@ for (
   date <= lastDate;
   date.setDate(date.getDate() + 1)
 ) {
-  if (date.getDate() < 10) {
-    process.stdout.write(` ${String(date.getDate())}`);
-  } else {
-    process.stdout.write(String(date.getDate()));
-  }
-  if (date.getDay() !== 6 && date.getDate() !== lastDate.getDate()) {
-    process.stdout.write(" ");
-  }
+  process.stdout.write(
+    date.getDate() < 10 ? ` ${date.getDate()}` : String(date.getDate()),
+  );
   if (date.getDay() === 6 || date.getDate() === lastDate.getDate()) {
     console.log();
   } else {
