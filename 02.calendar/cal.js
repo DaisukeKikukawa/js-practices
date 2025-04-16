@@ -30,5 +30,7 @@ for (
   }
   if (date.getDay() === 6 || date.getDate() === lastDate.getDate()) {
     console.log();
+  } else {
+    process.stdout.write(" ");
   }
 }
