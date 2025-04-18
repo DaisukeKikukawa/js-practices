@@ -9,6 +9,7 @@ const month = argv.m ?? now.getMonth() + 1;
 const startDate = new Date(year, month - 1, 1);
 const lastDate = new Date(year, month, 0);
 let indentByStartDay = " ".repeat(startDate.getDay() * 3);
+let indentByDateDigitNumber;
 
 process.stdout.write("      ");
 console.log(`${month}月 ${year}`);
@@ -20,9 +21,10 @@ for (
   date <= lastDate;
   date.setDate(date.getDate() + 1)
 ) {
-  process.stdout.write(
-    date.getDate() < 10 ? ` ${date.getDate()}` : String(date.getDate()),
-  );
+  date.getDate() < 10
+    ? (indentByDateDigitNumber = " ")
+    : (indentByDateDigitNumber = "");
+  process.stdout.write(indentByDateDigitNumber + String(date.getDate()));
   if (date.getDay() === 6 || date.getDate() === lastDate.getDate()) {
     console.log();
   } else {
