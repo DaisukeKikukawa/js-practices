@@ -23,3 +23,22 @@ db.run(
 
 await timers.setTimeout(1000);
 
+db.run(
+  "INSERT INTO Book(title) VALUES (?)",
+  "初めてのJavaScript 第3版",
+  function (error) {
+    if (error) {
+      console.error(error.message);
+    } else {
+      console.log(this.lastID);
+    }
+    db.get("SELECT id, title FROM Book", function (error, row) {
+      if (error) {
+        console.error(error.message);
+      } else {
+        console.log(`${row.id} : ${row.title}`);
+      }
+      db.close();
+    });
+  },
+);
