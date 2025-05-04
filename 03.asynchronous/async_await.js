@@ -20,3 +20,23 @@ const db = new sqlite3.Database(":memory:");
   const row = await getRow(db, "SELECT id, title FROM books");
   console.log(`${row.id} : ${row.title}`);
 })();
+
+await timers.setTimeout(1000);
+
+(async () => {
+  try {
+    await runQuery(
+      db,
+      "INSERT INTO Book(title) VALUES (?)",
+      "初めてのJavaScript 第3版",
+    );
+  } catch (error) {
+    console.error(error.message);
+  }
+  try {
+    await runQuery(db, "SELECT id, title FROM Book");
+  } catch (error) {
+    console.error(error.message);
+  }
+  await closeDb(db);
+})();
