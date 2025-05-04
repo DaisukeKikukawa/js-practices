@@ -40,5 +40,5 @@ runQuery(db, "INSERT INTO Book(title) VALUES (?)", "初めてのJavaScript 第3�
     console.error(error.message);
   })
   .then(() => {
-    return closeDb();
+    closeDb(db);
   });
