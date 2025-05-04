@@ -20,3 +20,6 @@ db.run(
     );
   },
 );
+
+await timers.setTimeout(1000);
+
